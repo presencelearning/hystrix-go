@@ -7,8 +7,6 @@ import (
 	"time"
 
 	"testing/quick"
-
-	. "github.com/smartystreets/goconvey/convey"
 )
 
 func TestSuccess(t *testing.T) {
@@ -164,7 +162,7 @@ func TestForceOpenCircuit(t *testing.T) {
 		cb, _, err := GetCircuit("")
 		So(err, ShouldEqual, nil)
 
-		cb.toggleForceOpen(true)
+		cb.ToggleForceOpen(true)
 
 		errChan := GoC(context.Background(), "", func(ctx context.Context) error {
 			return nil
